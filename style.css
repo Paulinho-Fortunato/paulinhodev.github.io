@@ -1,0 +1,205 @@
+/* Fonte Hacker */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* Estilo Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background: linear-gradient(#0a0a0a, #050505);
+  color: #00ff88;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Efeito de scanline */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 136, 0.05),
+    rgba(0, 255, 136, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #000;
+  text-align: center;
+  padding: 25px;
+  border-bottom: 3px solid #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+  margin: auto;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px #00ff88, 0 0 15px #00ff88;
+  z-index: 1;
+  position: relative;
+}
+
+/* PartÃ­culas de efeito Matrix - estrelas ou caracteres caindo */
+@keyframes rain {
+  0% { opacity: 1; transform: translateY(-100%) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(150vh) rotate(720deg); }
+}
+.rain {
+  position: fixed;
+  top: -10px;
+  width: 14px;
+  font-family: 'Courier New', monospace;
+  font-size: calc(8px + var(--size));
+  color: #0f0;
+  animation: rain linear infinite;
+  user-select: none;
+  z-index: 0;
+}
+
+/* PartÃ­culas de estrelas brilhantes em movimento aleatÃģrio */
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
+.star {
+  position: fixed;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: calc(1px + var(--size));
+  height: calc(1px + var(--size));
+  opacity: 0.8;
+  animation: sparkle 1.5s infinite ease-in-out;
+  z-index: 0;
+}
+
+/* Navegação */
+nav {
+  margin-top: 15px;
+}
+
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 1;
+  position: relative;
+}
+
+nav a {
+  color: #00ff88;
+  text-decoration: none;
+  border: 1px solid #00ff88;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  background-color: #00ff88;
+  color: #000;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+
+/* Habilidades com efeito neon */
+#habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.skill {
+  background: linear-gradient(135deg, #0010117a, #00ff88);
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s, box-shadow 0.4s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.skill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+/* Conteúdo Principal */
+main {
+  padding: 30px;
+  z-index: 1;
+  position: relative;
+}
+
+section {
+  margin-bottom: 60px;
+  padding: 20px;
+  border-left: 5px solid #00ff88;
+  box-shadow: 0 0 5px #00ff88;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+h2, h3 {
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px #00ff88;
+}
+
+
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, textarea {
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+}
+
+button {
+  padding: 10px;
+  background-color: #00ff88;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #00cc66;
+}
+
+
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  border-top: 2px solid #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+}
